@@ -22,6 +22,7 @@
 		F024DF9A1E62B64600A1C889 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F024DF991E62B64600A1C889 /* UserData.swift */; };
 		F024DF9C1E62B6BA00A1C889 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F024DF9B1E62B6BA00A1C889 /* Config.swift */; };
 		F024DF9E1E62CECE00A1C889 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F024DF9D1E62CECE00A1C889 /* ProfileViewController.swift */; };
+		F024DFA01E63154A00A1C889 /* EnrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F024DF9F1E63154A00A1C889 /* EnrollViewController.swift */; };
 		F09D476B1DE931EF00F41C2D /* imageFromSampleBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D476A1DE931EF00F41C2D /* imageFromSampleBuffer.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		F024DF991E62B64600A1C889 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		F024DF9B1E62B6BA00A1C889 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		F024DF9D1E62CECE00A1C889 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F024DF9F1E63154A00A1C889 /* EnrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnrollViewController.swift; sourceTree = "<group>"; };
 		F09D476A1DE931EF00F41C2D /* imageFromSampleBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageFromSampleBuffer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 				F024DF931E62A76E00A1C889 /* FaceFeature.swift */,
 				F024DF951E62B55900A1C889 /* APIConnector.swift */,
 				F024DF991E62B64600A1C889 /* UserData.swift */,
+				F024DF9F1E63154A00A1C889 /* EnrollViewController.swift */,
 				F024DF9B1E62B6BA00A1C889 /* Config.swift */,
 				C90BE1E21D194A7900033F1F /* Main.storyboard */,
 				C90BE1E51D194A7900033F1F /* Assets.xcassets */,
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C90BE1E11D194A7900033F1F /* ViewController.swift in Sources */,
+				F024DFA01E63154A00A1C889 /* EnrollViewController.swift in Sources */,
 				F024DF941E62A76E00A1C889 /* FaceFeature.swift in Sources */,
 				F024DF9E1E62CECE00A1C889 /* ProfileViewController.swift in Sources */,
 				F024DF9C1E62B6BA00A1C889 /* Config.swift in Sources */,

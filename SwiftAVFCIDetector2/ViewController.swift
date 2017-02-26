@@ -206,6 +206,9 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     func FaceFeatureSender() {
         let apiCon:APIConnector = APIConnector(activity:self, type:2, object: self.faceFeature!)
         apiCon.execute()
+        if(apiCon.type == 2){
+            
+        }
     }
 
     
