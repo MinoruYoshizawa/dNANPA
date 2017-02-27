@@ -85,5 +85,125 @@ class detectFace{
         appDelegate.faceCount = count
         return img!;
     }
+    
+    
+    func detectFace2(_ image: UIImage, detector: CIDetector) -> UIImage {
+        
+        let ciImage:CIImage! = CIImage(image: image)
+        
+        let features = detector.features(in: ciImage)//, options:options)
+        
+        //ここを読まないとサイズの概念を紐解けない？
+        var uiimage:UIImage = UIImage()
+        var rect:CGRect = CGRect()
+        var leftEye:CGRect = CGRect()
+        var rightEye:CGRect = CGRect()
+        var mouth:CGRect = CGRect()
+        var croppedFaceCIImage:CIImage = CIImage()
+        var ff:CIFaceFeature = CIFaceFeature()
+        
+        for feature in features as! [CIFaceFeature] {
+            
+            //print("\(feature.leftEyePosition.x) \(feature.leftEyePosition.y)")
+            
+            rect = feature.bounds;
+            
+            croppedFaceCIImage = ciImage.cropping(to: rect)
+            croppedFaceCIImage.applying(CGAffineTransform(scaleX: (256/rect.size.width), y: (256/rect.size.height)))
+            ff = feature
+        }
+        //rect.applying(CGAffineTransform(scaleX: (256/rect.size.width), y: (256/rect.size.height)))
+        //var features2 = detector.features(in: croppedFaceCIImage)
+        //let ff:CIFaceFeature = features2[0] as! CIFaceFeature
+        let left:CGPoint = CGPoint(x:(ff.leftEyePosition.x-rect.minX)*(256/rect.size.width), y:(rect.size.height-(ff.leftEyePosition.y-rect.minY))*(256/rect.size.width))
+        let right:CGPoint = CGPoint(x:(ff.rightEyePosition.x-rect.minX)*(256/rect.size.width), y:(rect.size.height-(ff.rightEyePosition.y-rect.minY))*(256/rect.size.width))
+        
+        let dist = sqrt(pow(Double(right.x - left.x), 2.0) + pow(Double(right.y-left.y), 2.0))
+        
+        leftEye = CGRect(x:ff.leftEyePosition.x-rect.minX-5, y:rect.size.height-(ff.leftEyePosition.y-rect.minY)-5, width:10, height:10)
+        rightEye = CGRect(x:ff.rightEyePosition.x-rect.minX-5, y:rect.size.height-(ff.rightEyePosition.y-rect.minY)-5, width:10, height:10)
+        mouth = CGRect(x:ff.mouthPosition.x-rect.minX-5, y:rect.size.height-(ff.mouthPosition.y-rect.minY)-5, width:10, height:10)
+        
+        uiimage = UIImage(ciImage: croppedFaceCIImage, scale: 1.0, orientation: UIImageOrientation.up)
+        //var img2 = UIImage(ciImage: ciImage, scale: 1.0, orientation: UIImageOrientation.up)
+        
+        UIGraphicsBeginImageContext(rect.size);
+        uiimage.draw(in: CGRect(x: 0,y: 0,width: uiimage.size.width,height: uiimage.size.height))
+        //UIGraphicsBeginImageContext(image.size);
+        //img2.draw(in: CGRect(x: 0,y: 0,width: img2.size.width,height: img2.size.height))
+        let context: CGContext = UIGraphicsGetCurrentContext()!
+        context.setLineWidth(2.0);
+        context.setStrokeColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
+        context.addRect(leftEye);
+        context.addRect(rightEye);
+        context.addRect(mouth);
+        context.strokePath()
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        print("distance: \(dist)")
+        
+        
+        return img!
+    }
+    
+    
+    func detectFaceEnroll(_ image: UIImage, detector: CIDetector, activity: CaptureViewController, flag: Bool) -> UIImage {
+        
+        let ciImage:CIImage! = CIImage(image: image)
+        
+        let features = detector.features(in: ciImage)
+        
+        var uiimage:UIImage = UIImage()
+        var rect:CGRect = CGRect()
+        var croppedFaceCIImage:CIImage = CIImage()
+        var ff:CIFaceFeature = CIFaceFeature()
+        
+        var count:Int = 0
+        for feature in features as! [CIFaceFeature] {
+            
+            rect = feature.bounds;
+            
+            //croppedFaceCIImage = ciImage.cropping(to: rect)
+            //croppedFaceCIImage.applying(CGAffineTransform(scaleX: (256/rect.size.width), y: (256/rect.size.height)))
+            ff = feature
+            count += 1
+        }
+        
+        
+        let left:CGPoint = CGPoint(x:(ff.leftEyePosition.x-rect.minX)*(256/rect.size.width), y:(rect.size.height-(ff.leftEyePosition.y-rect.minY))*(256/rect.size.width))
+        let right:CGPoint = CGPoint(x:(ff.rightEyePosition.x-rect.minX)*(256/rect.size.width), y:(rect.size.height-(ff.rightEyePosition.y-rect.minY))*(256/rect.size.width))
+        let mouth:CGPoint = CGPoint(x:(ff.mouthPosition.x-rect.minX)*(256/rect.size.width) ,y:(rect.size.height-(ff.mouthPosition.y-rect.minY))*(256/rect.size.width))
+        
+        let faceFeature:FaceFeature = FaceFeature()
+        faceFeature.setLeftEye(obj: left)
+        faceFeature.setRightEye(obj: right)
+        faceFeature.setMouth(obj: mouth)
+        
+        uiimage = UIImage(ciImage: ciImage, scale: 1.0, orientation: UIImageOrientation.up)
+        
+        UIGraphicsBeginImageContext(uiimage.size);
+        uiimage.draw(in: CGRect(x: 0,y: 0,width: uiimage.size.width,height: uiimage.size.height))
+        
+        let context: CGContext = UIGraphicsGetCurrentContext()!
+        context.setLineWidth(2.0);
+        context.setStrokeColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
+        context.addRect(rect);
+        context.strokePath()
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        if(count==1 && flag){
+            activity.noticeFeature(ff: faceFeature)
+        }else{
+            activity.noticeFeature(ff: nil)
+        }
+        
+        return img!
+    }
+    
+
+    
+    
 
 }

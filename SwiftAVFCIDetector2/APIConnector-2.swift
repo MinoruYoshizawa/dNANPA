@@ -63,8 +63,8 @@ class APIConnector : NSObject {
             group.notify(queue: .global()) {
                 print("データ取得完了")
                 DispatchQueue.main.async {
-                    //let uivc:EnrollViewController = self.activity as! EnrollViewController
-                    //uivc.reDicision() //ステータス再判定
+                    let uivc:EnrollViewController = self.activity as! EnrollViewController
+                    uivc.reDicision() //ステータス再判定
                     self.endIndicator()
                 }
             }
@@ -82,12 +82,27 @@ class APIConnector : NSObject {
             group.notify(queue: .global()) {
                 print("データ取得完了")
                 DispatchQueue.main.async {
-                    //let uivc:EnrollViewController = self.activity as! EnrollViewController
-                    //uivc.reDicision() //ステータス再判定
                     self.endIndicator()
                 }
             }
             
+        }else if(self.type==3){
+            //会員登録者の平均特徴量POST
+            //処理中のグルグルを表示
+            showIndicator()
+            //ディスパッチエントリー
+            group.enter()
+            //非同期通信
+            DispatchQueue.global().async {
+                self.postEnrollFaceFeature()
+            }
+            //非同期処理完了
+            group.notify(queue: .global()) {
+                print("データ取得完了")
+                DispatchQueue.main.async {
+                    self.endIndicator()
+                }
+            }
         }
 
         
@@ -153,7 +168,7 @@ class APIConnector : NSObject {
         
         let baseUrl:String = "http://concierge-apps.lovepop.jp/face/matching.php"
         var request = URLRequest(url: URL(string:baseUrl)!)
-        print(self.object)
+        
         let faceFeature:FaceFeature = self.object as! FaceFeature
         
         // set the method(HTTP-POST)
@@ -168,7 +183,7 @@ class APIConnector : NSObject {
                     "rightEye_x=\(rightEye.x)&" +
                     "rightEye_y=\(rightEye.y)&" +
                     "mouth_x=\(mouthEye.x)&" +
-                    "mouth_y=\(mouthEye.y)"
+                    "mouth_y=\(mouthEye.y)&"
         request.httpBody = query.data(using: String.Encoding.utf8)
         
         
@@ -215,7 +230,64 @@ class APIConnector : NSObject {
         task.resume()
     }
 
-    
+    //会員登録者の平均特徴量POST
+    func postEnrollFaceFeature(){
+        
+        let baseUrl:String = "http://concierge-apps.lovepop.jp/face/regist_feature.php"
+        var request = URLRequest(url: URL(string:baseUrl)!)
+        
+        let faceFeature:FaceFeature = self.object as! FaceFeature
+        
+        // set the method(HTTP-POST)
+        request.httpMethod = "POST"
+        
+        let leftEye:CGPoint = faceFeature.getLeftEye()
+        let rightEye:CGPoint = faceFeature.getRightEye()
+        let mouthEye:CGPoint = faceFeature.getMouth()
+        
+        let query = "leftEye_x=\(leftEye.x)&" +
+            "leftEye_y=\(leftEye.y)&" +
+            "rightEye_x=\(rightEye.x)&" +
+            "rightEye_y=\(rightEye.y)&" +
+            "mouth_x=\(mouthEye.x)&" +
+            "mouth_y=\(mouthEye.y)&" +
+            "user_id=\(Config.sharedInstance.user_id)"
+        request.httpBody = query.data(using: String.Encoding.utf8)
+        
+        
+        let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+            if error != nil {
+                
+                print(error!.localizedDescription)
+            } else {
+                
+                do {
+                    
+                    let parsedData = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String:String]
+                    
+                    print(parsedData)
+                    
+                    if(parsedData["result"] == "1"){
+                        //成功
+                        self.resultState = 1
+
+                    }else{
+                        //エラー
+                        self.resultState = -1
+                    }
+                    
+                    self.group.leave()
+                } catch {
+                    //エラー処理
+                    self.resultState = -1
+                    self.group.leave()
+                }
+            }
+            
+        })
+        
+        task.resume()
+    }
     
     
     //グルグル生成＆表示
@@ -244,7 +316,7 @@ class APIConnector : NSObject {
         if(self.type==1){
             self.indicator.stopAnimating()
             
-            if(self.resultState==1){
+            if(self.resultState == 1){
                 //成功
                 let alert = UIAlertController(
                     title: "成功",
@@ -263,7 +335,8 @@ class APIConnector : NSObject {
                 activity.present(alert, animated: true, completion: nil)
             }
             
-        }else if(self.type==2){
+        }else if(self.type == 2){
+            self.indicator.stopAnimating()
             
             if(self.resultState==1){
                 //成功
@@ -283,6 +356,34 @@ class APIConnector : NSObject {
                 alert.addAction(UIAlertAction(title: "OK", style: .default))
                 activity.present(alert, animated: true, completion: nil)
             }
+            
+        }else if(self.type == 3){
+            self.indicator.stopAnimating()
+            
+            if(self.resultState == 1){
+                //成功
+                let alert = UIAlertController(
+                    title: "成功",
+                    message: "登録完了しました。",
+                    preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                activity.present(alert, animated: true, completion: {
+                    let vc:CaptureViewController = self.activity as! CaptureViewController
+                    vc.successedPost(result: true)
+                })
+                
+            }else if(self.resultState == -1){
+                //該当なし
+                let alert = UIAlertController(
+                    title: "エラー",
+                    message: "再度お試しください。",
+                    preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                activity.present(alert, animated: true, completion: nil)
+                let vc:CaptureViewController = activity as! CaptureViewController
+                vc.successedPost(result: false)
+            }
+
             
         }
         
