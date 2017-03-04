@@ -2,8 +2,8 @@
 //  DeviceSize.swift
 //  calcApp
 //
-//  Created by 松浦 雅人 on 2017/01/09.
-//  Copyright © 2017年 松浦 雅人. All rights reserved.
+//  Created by Yoshizawa Minoru on 2017/01/09.
+//  Copyright © 2017年 Yoshizawa Minoru. All rights reserved.
 //
 
 import UIKit

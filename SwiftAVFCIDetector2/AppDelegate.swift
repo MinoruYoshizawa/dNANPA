@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  SwiftAVFCIDetector
 //
-//  Created by Yoshihisa Nitta on 2016/06/21.
-//  Copyright © 2016年 Yoshihisa Nitta. All rights reserved.
+//  Created by Yoshizawa Minoru on 2016/06/21.
+//  Copyright © 2016年 Yoshizawa Minoru. All rights reserved.
 //
 
 import UIKit
@@ -23,9 +23,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var leftEyePositionData:CGPoint?
     var rightEyePositionData:CGPoint?
     var mouthPositionData:CGPoint?
+    var faceSizeHeight:CGFloat?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // first time to launch this app
+        let defaults = UserDefaults.standard
+        var dic = ["firstLaunch": true]
+        defaults.register(defaults: dic)
+        
+//        // ページを格納する配列
+//        var viewControllers: [UIViewController] = []
+//        
+//        // 1ページ目になるViewController
+//        let firstVC = ViewController()
+//        firstVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
+//        viewControllers.append(firstVC)
+//        
+//        // 2ページ目になるViewController
+//        let secondVC = ProfileViewController()
+//        secondVC.tabBarItem = UITabBarItem(title: "Page 2", image: nil, tag: 2)
+//        viewControllers.append(secondVC)
+//        
+//        // ページをセット
+//        let tabBarController = UITabBarController()
+//        tabBarController.setViewControllers(viewControllers, animated: false)
+        
+//        // ルートを UITabBarController にする
+        //window = UIWindow(frame: UIScreen.main.bounds)
+        //window?.backgroundColor = UIColor.white
+        //window?.rootViewController = tabBarController
+        //window?.makeKeyAndVisible()
+        
         return true
     }
 

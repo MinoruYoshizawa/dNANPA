@@ -2,8 +2,8 @@
 //  detectFace.swift
 //  SwiftAVFCIDetector2
 //
-//  Created by 吉澤実 on H28/11/26.
-//  Copyright © 平成28年 Yoshihisa Nitta. All rights reserved.
+//  Created by Yoshizawa Minoru on H28/11/26.
+//  Copyright © 平成28年 Yoshizawa Minoru. All rights reserved.
 //
 
 import Foundation
@@ -35,17 +35,19 @@ class detectFace{
         context.setLineWidth(5.0);
         context.setStrokeColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
 
-        //ここを読まないとサイズの概念を紐解けない？
         let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate //AppDelegateのインスタンスを取得
         //人の分だけフィーチャーを取ってくる
         for feature in features as! [CIFaceFeature] {
             
             count += 1
             
+            //let Button = UIButton()
+            
             //boundsは顔の範囲
             var rect:CGRect = feature.bounds;
             rect2 = feature.bounds;
             
+            //小さい世界と大きい世界を合わせる為に256×256に加工する
             croppedFaceCIImage = ciImage.cropping(to: rect)
             croppedFaceCIImage.applying(CGAffineTransform(scaleX: (256/rect.size.width), y: (256/rect.size.height)))
             ff = feature
@@ -57,9 +59,11 @@ class detectFace{
             print("origin.x:\(rect.origin.x)")
             print("origin.y:\(rect.origin.y)")
             
-            //maskサイズを2倍にしてみた
+            appDelegate.faceSizeHeight = rect.size.height
+            
+            //矩形のサイズ
             rect.size.height = rect.size.height/4
-            rect.size.width = rect.size.width
+            rect.size.width = rect.size.width/4
             
             appDelegate.tagButtonSize_x = rect.size.width
             appDelegate.tagButtonSize_y = rect.size.height
@@ -92,8 +96,6 @@ class detectFace{
         let ciImage:CIImage! = CIImage(image: image)
         
         let features = detector.features(in: ciImage)//, options:options)
-        
-        //ここを読まないとサイズの概念を紐解けない？
         var uiimage:UIImage = UIImage()
         var rect:CGRect = CGRect()
         var leftEye:CGRect = CGRect()

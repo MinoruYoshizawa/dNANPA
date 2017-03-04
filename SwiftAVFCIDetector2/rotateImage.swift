@@ -2,8 +2,8 @@
 //  rotateImage.swift
 //  SwiftAVFCIDetector2
 //
-//  Created by 吉澤実 on H28/11/26.
-//  Copyright © 平成28年 Yoshihisa Nitta. All rights reserved.
+//  Created by Yoshizawa Minoru on H28/11/26.
+//  Copyright © 平成28年 Yoshizawa Minoru. All rights reserved.
 //
 
 import Foundation

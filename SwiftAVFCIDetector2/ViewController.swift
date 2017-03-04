@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  SwiftAVFCIDetector
 //
-//  Created by Yoshihisa Nitta on 2016/06/21.
-//  Copyright © 2016年 Yoshihisa Nitta. All rights reserved.
+//  Created by Yoshizawa Minoru on 2016/06/21.
+//  Copyright © 2016年 Yoshizawa Minoru. All rights reserved.
 //
 
 import UIKit
@@ -33,20 +33,21 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     var imageSize:CGSize!
     var btnFlg:Bool = false
     var faceFeature: FaceFeature? = FaceFeature()
+    let Button = UIButton()
     
     //ボタンとの関連づけ
     @IBOutlet weak var myImageView: UIImageView!
-    @IBAction func tapStart(_ sender: AnyObject) {
-        //スレッドを実行する（常時実行状態にする
-        mySession.startRunning()
-    }
-    @IBAction func tapStop(_ sender: AnyObject) {
-        mySession.stopRunning()
-    }
-    @IBAction func tapDetect(_ sender: AnyObject) {
-        //detectFlgを反転する
-        detectFlag = !detectFlag
-    }
+//    @IBAction func tapStart(_ sender: AnyObject) {
+//        //スレッドを実行する（常時実行状態にする
+//        mySession.startRunning()
+//    }
+//    @IBAction func tapStop(_ sender: AnyObject) {
+//        mySession.stopRunning()
+//    }
+//    @IBAction func tapDetect(_ sender: AnyObject) {
+//        //detectFlgを反転する
+//        detectFlag = !detectFlag
+//    }
     
     //撮影時のカメラの向きを補正？
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
@@ -67,14 +68,14 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                 if(appDelegate.faceCount == 0){
                     
                     if(self.btnFlg == true){
-                        self.view.viewWithTag(99+self.count)?.removeFromSuperview()
+                        //self.view.viewWithTag(99+self.count)?.removeFromSuperview()
                     }
                     
                 }else{
                 
-                self.view.viewWithTag(99+self.count)?.removeFromSuperview()
+                //self.view.viewWithTag(99+self.count)?.removeFromSuperview()
                 
-                let Button = UIButton()
+                //let Button = UIButton()
                 self.btnFlg = true
            
                 
@@ -90,8 +91,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                 
                 
                 // ボタンのX,Y座標.
-                let posX: CGFloat = self.detectPosition_x * (self.view.frame.size.width/self.imageSize!.width) - self.myImageView.frame.minX*4
-                let posY: CGFloat = self.detectPosition_y * (self.view.frame.size.height/self.imageSize!.height) - self.myImageView.frame.minY*1.2
+                let posX: CGFloat = self.detectPosition_x * (self.view.frame.size.width/self.imageSize!.width) + self.myImageView.frame.minX + appDelegate.faceSizeHeight!/10
+                let posY: CGFloat = self.detectPosition_y * (self.view.frame.size.height/self.imageSize!.height) - self.myImageView.frame.minY - appDelegate.faceSizeHeight!/2.2
                 
                 print("\(image.size.width/self.imageSize!.width)*********")
                     
@@ -105,41 +106,41 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                     
                     
                 // ボタンの設置座標とサイズを設定する.
-                Button.frame = CGRect(x: posX, y: posY, width: self.buttonWidth, height: self.buttonHeight)
+                self.Button.frame = CGRect(x: posX, y: posY, width: self.buttonWidth, height: self.buttonHeight)
                 
-                let buttonImageDefault :UIImage? = UIImage(named: "8658695.png")//ボタンの画像
+                let buttonImageDefault :UIImage? = UIImage(named: "goodIcon2.png")//ボタンの画像
                 //let buttonImageSelected :UIImage? = UIImage(named:"btn_selected")//押された時のボタンの画像
                 //Button.setImage(buttonImageDefault!, for: UIControlState.highlighted)
-                Button.setBackgroundImage(buttonImageDefault!, for: UIControlState.normal)
+                self.Button.setBackgroundImage(buttonImageDefault!, for: UIControlState.normal)
                 // ボタンの背景色を設定.
-                Button.backgroundColor = UIColor.clear
+                self.Button.backgroundColor = UIColor.clear
                 
                 // ボタンの枠を丸くする.
-                Button.layer.masksToBounds = true
+                self.Button.layer.masksToBounds = true
                 
                 // コーナーの半径を設定する.
-                Button.layer.cornerRadius = 20.0
+                self.Button.layer.cornerRadius = 20.0
                 
                 // タイトルを設定する(通常時).
-                Button.setTitle("いいね！", for: .normal)
-                Button.setTitleColor(UIColor.black, for: .normal)
+                //self.Button.setTitle("いいね！", for: .normal)
+                self.Button.setTitleColor(UIColor.black, for: .normal)
                 
                 // タイトルを設定する(ボタンがハイライトされた時).
-                Button.setTitle("THANK YOU!", for: .highlighted)
+                self.Button.setTitle("THANK YOU!", for: .highlighted)
                 //Button.setTitleColor(UIColor.black, for: .highlighted)
                 
                 // ボタンにタグをつける.
-                Button.tag = 100+self.count
+                self.Button.tag = 100+self.count
                 self.count += 1
                 
                 self.faceFeature?.leftEye = appDelegate.leftEyePositionData!
                 self.faceFeature?.rightEye = appDelegate.rightEyePositionData!
                 self.faceFeature?.mouth = appDelegate.mouthPositionData!
                     print("1: \(self.faceFeature?.leftEye)")
-                Button.addTarget(self, action: #selector(self.FaceFeatureSender), for: .touchUpInside)
+                self.Button.addTarget(self, action: #selector(self.FaceFeatureSender), for: .touchUpInside)
                     
                 // ボタンをViewに追加.
-                self.view.addSubview(Button)
+                //self.view.addSubview(self.Button)
                     }
                 }
                 
@@ -214,10 +215,13 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.addSubview(self.Button)
+        detectFlag = !detectFlag
         detector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: [CIDetectorAccuracy:CIDetectorAccuracyHigh])
-        maskImage = UIImage(named: "8658695.png")
+        maskImage = UIImage(named: "hukidashi.png")
         startDate = Date()
         prepareVideo()
+        mySession.startRunning()
     }
 
     override func didReceiveMemoryWarning() {

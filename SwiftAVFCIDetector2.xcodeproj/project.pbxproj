@@ -15,6 +15,8 @@
 		F01877391DD70CE800FCE1F9 /* 8658695.png in Resources */ = {isa = PBXBuildFile; fileRef = F01877381DD70CE800FCE1F9 /* 8658695.png */; };
 		F01877AC1DE91F0E00FCE1F9 /* rotateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01877AB1DE91F0E00FCE1F9 /* rotateImage.swift */; };
 		F01877AE1DE9293000FCE1F9 /* detectFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01877AD1DE9293000FCE1F9 /* detectFace.swift */; };
+		F01C99701E6AA65900F03094 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C996F1E6AA65800F03094 /* TabBarViewController.swift */; };
+		F01C99721E6AA76E00F03094 /* TabMessage.png in Resources */ = {isa = PBXBuildFile; fileRef = F01C99711E6AA76E00F03094 /* TabMessage.png */; };
 		F024DF941E62A76E00A1C889 /* FaceFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F024DF931E62A76E00A1C889 /* FaceFeature.swift */; };
 		F024DF981E62B58800A1C889 /* lena.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F024DF971E62B58800A1C889 /* lena.jpg */; };
 		F024DF9A1E62B64600A1C889 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F024DF991E62B64600A1C889 /* UserData.swift */; };
@@ -26,11 +28,18 @@
 		F024DFA81E647B6F00A1C889 /* DeviceSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F024DFA71E647B6F00A1C889 /* DeviceSize.swift */; };
 		F024DFAA1E647F5200A1C889 /* APIConnector-2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F024DFA91E647F5200A1C889 /* APIConnector-2.swift */; };
 		F024DFAC1E6485CF00A1C889 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F024DFAB1E6485CF00A1C889 /* Main.storyboard */; };
+		F024DFAE1E65C1DF00A1C889 /* hukidashi.png in Resources */ = {isa = PBXBuildFile; fileRef = F024DFAD1E65C1DF00A1C889 /* hukidashi.png */; };
+		F024DFB01E6A5C4700A1C889 /* goodIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F024DFAF1E6A5C4700A1C889 /* goodIcon.png */; };
+		F024DFB21E6A617900A1C889 /* goodIcon3.png in Resources */ = {isa = PBXBuildFile; fileRef = F024DFB11E6A617900A1C889 /* goodIcon3.png */; };
+		F024DFB41E6A642D00A1C889 /* goodIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = F024DFB31E6A642D00A1C889 /* goodIcon2.png */; };
+		F024DFB61E6A69BE00A1C889 /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = F024DFB51E6A69BE00A1C889 /* title.png */; };
+		F024DFB81E6A6A5800A1C889 /* startImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F024DFB71E6A6A5800A1C889 /* startImage.jpg */; };
+		F024DFBA1E6A6A9800A1C889 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F024DFB91E6A6A9800A1C889 /* StartViewController.swift */; };
 		F09D476B1DE931EF00F41C2D /* imageFromSampleBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D476A1DE931EF00F41C2D /* imageFromSampleBuffer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C90BE1DB1D194A7900033F1F /* SwiftAVFCIDetector2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftAVFCIDetector2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90BE1DB1D194A7900033F1F /* dNanpa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dNanpa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90BE1DE1D194A7900033F1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C90BE1E01D194A7900033F1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C90BE1E51D194A7900033F1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +49,8 @@
 		F01877381DD70CE800FCE1F9 /* 8658695.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8658695.png; sourceTree = "<group>"; };
 		F01877AB1DE91F0E00FCE1F9 /* rotateImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rotateImage.swift; sourceTree = "<group>"; };
 		F01877AD1DE9293000FCE1F9 /* detectFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detectFace.swift; sourceTree = "<group>"; };
+		F01C996F1E6AA65800F03094 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		F01C99711E6AA76E00F03094 /* TabMessage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabMessage.png; sourceTree = "<group>"; };
 		F024DF931E62A76E00A1C889 /* FaceFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceFeature.swift; sourceTree = "<group>"; };
 		F024DF971E62B58800A1C889 /* lena.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lena.jpg; sourceTree = "<group>"; };
 		F024DF991E62B64600A1C889 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -51,6 +62,13 @@
 		F024DFA71E647B6F00A1C889 /* DeviceSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceSize.swift; sourceTree = "<group>"; };
 		F024DFA91E647F5200A1C889 /* APIConnector-2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIConnector-2.swift"; sourceTree = "<group>"; };
 		F024DFAB1E6485CF00A1C889 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F024DFAD1E65C1DF00A1C889 /* hukidashi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hukidashi.png; sourceTree = "<group>"; };
+		F024DFAF1E6A5C4700A1C889 /* goodIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goodIcon.png; sourceTree = "<group>"; };
+		F024DFB11E6A617900A1C889 /* goodIcon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goodIcon3.png; sourceTree = "<group>"; };
+		F024DFB31E6A642D00A1C889 /* goodIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goodIcon2.png; sourceTree = "<group>"; };
+		F024DFB51E6A69BE00A1C889 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
+		F024DFB71E6A6A5800A1C889 /* startImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = startImage.jpg; sourceTree = "<group>"; };
+		F024DFB91E6A6A9800A1C889 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		F09D476A1DE931EF00F41C2D /* imageFromSampleBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imageFromSampleBuffer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,7 +94,7 @@
 		C90BE1DC1D194A7900033F1F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C90BE1DB1D194A7900033F1F /* SwiftAVFCIDetector2.app */,
+				C90BE1DB1D194A7900033F1F /* dNanpa.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,6 +105,7 @@
 				C90BE1F01D196FEA00033F1F /* LaughingMan.png */,
 				C90BE1DE1D194A7900033F1F /* AppDelegate.swift */,
 				C90BE1E01D194A7900033F1F /* ViewController.swift */,
+				F024DFB91E6A6A9800A1C889 /* StartViewController.swift */,
 				F024DF9D1E62CECE00A1C889 /* ProfileViewController.swift */,
 				F01877AB1DE91F0E00FCE1F9 /* rotateImage.swift */,
 				F01877AD1DE9293000FCE1F9 /* detectFace.swift */,
@@ -99,12 +118,20 @@
 				F024DFA51E647B6200A1C889 /* CaptureViewController.swift */,
 				F024DFA71E647B6F00A1C889 /* DeviceSize.swift */,
 				F024DF9B1E62B6BA00A1C889 /* Config.swift */,
+				F024DFAD1E65C1DF00A1C889 /* hukidashi.png */,
+				F024DFB31E6A642D00A1C889 /* goodIcon2.png */,
+				F024DFB11E6A617900A1C889 /* goodIcon3.png */,
+				F024DFAF1E6A5C4700A1C889 /* goodIcon.png */,
+				F024DFB71E6A6A5800A1C889 /* startImage.jpg */,
+				F024DFB51E6A69BE00A1C889 /* title.png */,
+				F01C99711E6AA76E00F03094 /* TabMessage.png */,
 				F024DFAB1E6485CF00A1C889 /* Main.storyboard */,
 				C90BE1E51D194A7900033F1F /* Assets.xcassets */,
 				F01877381DD70CE800FCE1F9 /* 8658695.png */,
 				F024DF971E62B58800A1C889 /* lena.jpg */,
 				C90BE1E71D194A7900033F1F /* LaunchScreen.storyboard */,
 				C90BE1EA1D194A7900033F1F /* Info.plist */,
+				F01C996F1E6AA65800F03094 /* TabBarViewController.swift */,
 			);
 			path = SwiftAVFCIDetector2;
 			sourceTree = "<group>";
@@ -126,7 +153,7 @@
 			);
 			name = SwiftAVFCIDetector2;
 			productName = SwiftAVFCIDetector;
-			productReference = C90BE1DB1D194A7900033F1F /* SwiftAVFCIDetector2.app */;
+			productReference = C90BE1DB1D194A7900033F1F /* dNanpa.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -137,7 +164,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = "Yoshihisa Nitta";
+				ORGANIZATIONNAME = "Yoshizawa  Minoru";
 				TargetAttributes = {
 					C90BE1DA1D194A7900033F1F = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -169,12 +196,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F024DFB41E6A642D00A1C889 /* goodIcon2.png in Resources */,
 				C90BE1E91D194A7900033F1F /* LaunchScreen.storyboard in Resources */,
+				F024DFB01E6A5C4700A1C889 /* goodIcon.png in Resources */,
 				F024DF981E62B58800A1C889 /* lena.jpg in Resources */,
+				F024DFAE1E65C1DF00A1C889 /* hukidashi.png in Resources */,
 				F024DFAC1E6485CF00A1C889 /* Main.storyboard in Resources */,
+				F01C99721E6AA76E00F03094 /* TabMessage.png in Resources */,
+				F024DFB21E6A617900A1C889 /* goodIcon3.png in Resources */,
 				C90BE1F11D196FEA00033F1F /* LaughingMan.png in Resources */,
 				C90BE1E61D194A7900033F1F /* Assets.xcassets in Resources */,
 				F01877391DD70CE800FCE1F9 /* 8658695.png in Resources */,
+				F024DFB81E6A6A5800A1C889 /* startImage.jpg in Resources */,
+				F024DFB61E6A69BE00A1C889 /* title.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,11 +219,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F01C99701E6AA65900F03094 /* TabBarViewController.swift in Sources */,
 				C90BE1E11D194A7900033F1F /* ViewController.swift in Sources */,
 				F024DFAA1E647F5200A1C889 /* APIConnector-2.swift in Sources */,
 				F024DFA01E63154A00A1C889 /* EnrollViewController.swift in Sources */,
 				F024DFA41E647B5800A1C889 /* SampleViewController.swift in Sources */,
 				F024DF941E62A76E00A1C889 /* FaceFeature.swift in Sources */,
+				F024DFBA1E6A6A9800A1C889 /* StartViewController.swift in Sources */,
 				F024DF9E1E62CECE00A1C889 /* ProfileViewController.swift in Sources */,
 				F024DF9C1E62B6BA00A1C889 /* Config.swift in Sources */,
 				F024DF9A1E62B64600A1C889 /* UserData.swift in Sources */,
@@ -310,7 +346,7 @@
 				INFOPLIST_FILE = SwiftAVFCIDetector2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.docomo.SwiftAVFCIDetector2;
-				PRODUCT_NAME = SwiftAVFCIDetector2;
+				PRODUCT_NAME = dNanpa;
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
 			};
@@ -325,7 +361,7 @@
 				INFOPLIST_FILE = SwiftAVFCIDetector2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.docomo.SwiftAVFCIDetector2;
-				PRODUCT_NAME = SwiftAVFCIDetector2;
+				PRODUCT_NAME = dNanpa;
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
 			};
