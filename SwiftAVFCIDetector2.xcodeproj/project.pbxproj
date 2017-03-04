@@ -15,7 +15,6 @@
 		F01877391DD70CE800FCE1F9 /* 8658695.png in Resources */ = {isa = PBXBuildFile; fileRef = F01877381DD70CE800FCE1F9 /* 8658695.png */; };
 		F01877AC1DE91F0E00FCE1F9 /* rotateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01877AB1DE91F0E00FCE1F9 /* rotateImage.swift */; };
 		F01877AE1DE9293000FCE1F9 /* detectFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01877AD1DE9293000FCE1F9 /* detectFace.swift */; };
-		F01C99701E6AA65900F03094 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C996F1E6AA65800F03094 /* TabBarViewController.swift */; };
 		F01C99721E6AA76E00F03094 /* TabMessage.png in Resources */ = {isa = PBXBuildFile; fileRef = F01C99711E6AA76E00F03094 /* TabMessage.png */; };
 		F024DF941E62A76E00A1C889 /* FaceFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F024DF931E62A76E00A1C889 /* FaceFeature.swift */; };
 		F024DF981E62B58800A1C889 /* lena.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F024DF971E62B58800A1C889 /* lena.jpg */; };
@@ -49,7 +48,6 @@
 		F01877381DD70CE800FCE1F9 /* 8658695.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8658695.png; sourceTree = "<group>"; };
 		F01877AB1DE91F0E00FCE1F9 /* rotateImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rotateImage.swift; sourceTree = "<group>"; };
 		F01877AD1DE9293000FCE1F9 /* detectFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detectFace.swift; sourceTree = "<group>"; };
-		F01C996F1E6AA65800F03094 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F01C99711E6AA76E00F03094 /* TabMessage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabMessage.png; sourceTree = "<group>"; };
 		F024DF931E62A76E00A1C889 /* FaceFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceFeature.swift; sourceTree = "<group>"; };
 		F024DF971E62B58800A1C889 /* lena.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lena.jpg; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 				F024DF971E62B58800A1C889 /* lena.jpg */,
 				C90BE1E71D194A7900033F1F /* LaunchScreen.storyboard */,
 				C90BE1EA1D194A7900033F1F /* Info.plist */,
-				F01C996F1E6AA65800F03094 /* TabBarViewController.swift */,
 			);
 			path = SwiftAVFCIDetector2;
 			sourceTree = "<group>";
@@ -219,7 +216,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F01C99701E6AA65900F03094 /* TabBarViewController.swift in Sources */,
 				C90BE1E11D194A7900033F1F /* ViewController.swift in Sources */,
 				F024DFAA1E647F5200A1C889 /* APIConnector-2.swift in Sources */,
 				F024DFA01E63154A00A1C889 /* EnrollViewController.swift in Sources */,
