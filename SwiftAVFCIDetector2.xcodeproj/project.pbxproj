@@ -16,6 +16,11 @@
 		F01877AC1DE91F0E00FCE1F9 /* rotateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01877AB1DE91F0E00FCE1F9 /* rotateImage.swift */; };
 		F01877AE1DE9293000FCE1F9 /* detectFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01877AD1DE9293000FCE1F9 /* detectFace.swift */; };
 		F01C99721E6AA76E00F03094 /* TabMessage.png in Resources */ = {isa = PBXBuildFile; fileRef = F01C99711E6AA76E00F03094 /* TabMessage.png */; };
+		F01C99741E6D9BC100F03094 /* heart2.png in Resources */ = {isa = PBXBuildFile; fileRef = F01C99731E6D9BC100F03094 /* heart2.png */; };
+		F01C99821E6EFB7000F03094 /* TabMessage2.png in Resources */ = {isa = PBXBuildFile; fileRef = F01C99811E6EFB7000F03094 /* TabMessage2.png */; };
+		F01C99841E6EFCE800F03094 /* likeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F01C99831E6EFCE800F03094 /* likeIcon.png */; };
+		F01C99881E6F017D00F03094 /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C99871E6F017D00F03094 /* MessageListViewController.swift */; };
+		F01C998A1E6F019800F03094 /* GoodListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C99891E6F019800F03094 /* GoodListViewController.swift */; };
 		F024DF941E62A76E00A1C889 /* FaceFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F024DF931E62A76E00A1C889 /* FaceFeature.swift */; };
 		F024DF981E62B58800A1C889 /* lena.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F024DF971E62B58800A1C889 /* lena.jpg */; };
 		F024DF9A1E62B64600A1C889 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F024DF991E62B64600A1C889 /* UserData.swift */; };
@@ -49,6 +54,11 @@
 		F01877AB1DE91F0E00FCE1F9 /* rotateImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rotateImage.swift; sourceTree = "<group>"; };
 		F01877AD1DE9293000FCE1F9 /* detectFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detectFace.swift; sourceTree = "<group>"; };
 		F01C99711E6AA76E00F03094 /* TabMessage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabMessage.png; sourceTree = "<group>"; };
+		F01C99731E6D9BC100F03094 /* heart2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart2.png; sourceTree = "<group>"; };
+		F01C99811E6EFB7000F03094 /* TabMessage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabMessage2.png; sourceTree = "<group>"; };
+		F01C99831E6EFCE800F03094 /* likeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = likeIcon.png; sourceTree = "<group>"; };
+		F01C99871E6F017D00F03094 /* MessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
+		F01C99891E6F019800F03094 /* GoodListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodListViewController.swift; sourceTree = "<group>"; };
 		F024DF931E62A76E00A1C889 /* FaceFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceFeature.swift; sourceTree = "<group>"; };
 		F024DF971E62B58800A1C889 /* lena.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lena.jpg; sourceTree = "<group>"; };
 		F024DF991E62B64600A1C889 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -105,23 +115,28 @@
 				C90BE1E01D194A7900033F1F /* ViewController.swift */,
 				F024DFB91E6A6A9800A1C889 /* StartViewController.swift */,
 				F024DF9D1E62CECE00A1C889 /* ProfileViewController.swift */,
+				F024DFA31E647B5800A1C889 /* SampleViewController.swift */,
+				F024DFA51E647B6200A1C889 /* CaptureViewController.swift */,
+				F024DF9F1E63154A00A1C889 /* EnrollViewController.swift */,
+				F01C99871E6F017D00F03094 /* MessageListViewController.swift */,
+				F01C99891E6F019800F03094 /* GoodListViewController.swift */,
 				F01877AB1DE91F0E00FCE1F9 /* rotateImage.swift */,
 				F01877AD1DE9293000FCE1F9 /* detectFace.swift */,
 				F09D476A1DE931EF00F41C2D /* imageFromSampleBuffer.swift */,
 				F024DF931E62A76E00A1C889 /* FaceFeature.swift */,
 				F024DF991E62B64600A1C889 /* UserData.swift */,
-				F024DF9F1E63154A00A1C889 /* EnrollViewController.swift */,
 				F024DFA91E647F5200A1C889 /* APIConnector-2.swift */,
-				F024DFA31E647B5800A1C889 /* SampleViewController.swift */,
-				F024DFA51E647B6200A1C889 /* CaptureViewController.swift */,
 				F024DFA71E647B6F00A1C889 /* DeviceSize.swift */,
 				F024DF9B1E62B6BA00A1C889 /* Config.swift */,
 				F024DFAD1E65C1DF00A1C889 /* hukidashi.png */,
+				F01C99731E6D9BC100F03094 /* heart2.png */,
+				F01C99831E6EFCE800F03094 /* likeIcon.png */,
 				F024DFB31E6A642D00A1C889 /* goodIcon2.png */,
 				F024DFB11E6A617900A1C889 /* goodIcon3.png */,
 				F024DFAF1E6A5C4700A1C889 /* goodIcon.png */,
 				F024DFB71E6A6A5800A1C889 /* startImage.jpg */,
 				F024DFB51E6A69BE00A1C889 /* title.png */,
+				F01C99811E6EFB7000F03094 /* TabMessage2.png */,
 				F01C99711E6AA76E00F03094 /* TabMessage.png */,
 				F024DFAB1E6485CF00A1C889 /* Main.storyboard */,
 				C90BE1E51D194A7900033F1F /* Assets.xcassets */,
@@ -195,6 +210,7 @@
 			files = (
 				F024DFB41E6A642D00A1C889 /* goodIcon2.png in Resources */,
 				C90BE1E91D194A7900033F1F /* LaunchScreen.storyboard in Resources */,
+				F01C99821E6EFB7000F03094 /* TabMessage2.png in Resources */,
 				F024DFB01E6A5C4700A1C889 /* goodIcon.png in Resources */,
 				F024DF981E62B58800A1C889 /* lena.jpg in Resources */,
 				F024DFAE1E65C1DF00A1C889 /* hukidashi.png in Resources */,
@@ -205,7 +221,9 @@
 				C90BE1E61D194A7900033F1F /* Assets.xcassets in Resources */,
 				F01877391DD70CE800FCE1F9 /* 8658695.png in Resources */,
 				F024DFB81E6A6A5800A1C889 /* startImage.jpg in Resources */,
+				F01C99841E6EFCE800F03094 /* likeIcon.png in Resources */,
 				F024DFB61E6A69BE00A1C889 /* title.png in Resources */,
+				F01C99741E6D9BC100F03094 /* heart2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,8 +237,10 @@
 				C90BE1E11D194A7900033F1F /* ViewController.swift in Sources */,
 				F024DFAA1E647F5200A1C889 /* APIConnector-2.swift in Sources */,
 				F024DFA01E63154A00A1C889 /* EnrollViewController.swift in Sources */,
+				F01C998A1E6F019800F03094 /* GoodListViewController.swift in Sources */,
 				F024DFA41E647B5800A1C889 /* SampleViewController.swift in Sources */,
 				F024DF941E62A76E00A1C889 /* FaceFeature.swift in Sources */,
+				F01C99881E6F017D00F03094 /* MessageListViewController.swift in Sources */,
 				F024DFBA1E6A6A9800A1C889 /* StartViewController.swift in Sources */,
 				F024DF9E1E62CECE00A1C889 /* ProfileViewController.swift in Sources */,
 				F024DF9C1E62B6BA00A1C889 /* Config.swift in Sources */,

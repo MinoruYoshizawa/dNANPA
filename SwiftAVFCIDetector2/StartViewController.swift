@@ -29,7 +29,7 @@ class StartViewController: UIViewController {
             defaults.set(false, forKey: "firstLaunch")
         }else{
             let storyboard: UIStoryboard = self.storyboard!
-            let nextView = storyboard.instantiateViewController(withIdentifier: "camera")
+            let nextView = storyboard.instantiateViewController(withIdentifier: "TabBar")
             self.present(nextView, animated: true, completion: nil)
         }
     }

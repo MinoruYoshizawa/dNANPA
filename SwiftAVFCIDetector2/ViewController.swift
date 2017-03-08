@@ -30,6 +30,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     var buttonWidth:CGFloat!
     var buttonHeight:CGFloat!
     var count = 0
+    var beforeFaceCount = 0
     var imageSize:CGSize!
     var btnFlg:Bool = false
     var faceFeature: FaceFeature? = FaceFeature()
@@ -68,11 +69,14 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                 if(appDelegate.faceCount == 0){
                     
                     if(self.btnFlg == true){
-                        //self.view.viewWithTag(99+self.count)?.removeFromSuperview()
+                        self.view.viewWithTag(99+self.count)?.removeFromSuperview()
                     }
                     
                 }else{
                 
+                    if(self.beforeFaceCount == 0 && appDelegate.faceCount! > 0){
+                        self.view.addSubview(self.Button)
+                    }
                 //self.view.viewWithTag(99+self.count)?.removeFromSuperview()
                 
                 //let Button = UIButton()
@@ -92,13 +96,19 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                 
                 // ボタンのX,Y座標.
                 let posX: CGFloat = self.detectPosition_x * (self.view.frame.size.width/self.imageSize!.width) + self.myImageView.frame.minX + appDelegate.faceSizeHeight!/10
-                let posY: CGFloat = self.detectPosition_y * (self.view.frame.size.height/self.imageSize!.height) - self.myImageView.frame.minY - appDelegate.faceSizeHeight!/2.2
+                var posY: CGFloat = self.detectPosition_y * (self.view.frame.size.height/self.imageSize!.height) - self.myImageView.frame.minY - appDelegate.faceSizeHeight!/2.2
+                
                 
                 print("\(image.size.width/self.imageSize!.width)*********")
                     
+                    //buttonの最大/最小を固定する
                     if(self.buttonWidth > 300){
                         self.buttonWidth = 300
-                        self.buttonHeight = 75
+                        self.buttonHeight = 300
+                    }else if(self.buttonWidth < 40){
+                        self.buttonWidth = 40
+                        self.buttonHeight = 40
+                        posY = posY - 40
                     }
                 
                     print("buttonWidth = \(self.buttonWidth)")
@@ -109,6 +119,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                 self.Button.frame = CGRect(x: posX, y: posY, width: self.buttonWidth, height: self.buttonHeight)
                 
                 let buttonImageDefault :UIImage? = UIImage(named: "goodIcon2.png")//ボタンの画像
+                let buttonImageHighlight :UIImage? = UIImage(named: "heart2.png")//押下時
                 //let buttonImageSelected :UIImage? = UIImage(named:"btn_selected")//押された時のボタンの画像
                 //Button.setImage(buttonImageDefault!, for: UIControlState.highlighted)
                 self.Button.setBackgroundImage(buttonImageDefault!, for: UIControlState.normal)
@@ -126,8 +137,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
                 self.Button.setTitleColor(UIColor.black, for: .normal)
                 
                 // タイトルを設定する(ボタンがハイライトされた時).
-                self.Button.setTitle("THANK YOU!", for: .highlighted)
-                //Button.setTitleColor(UIColor.black, for: .highlighted)
+                //self.Button.setTitle("THANK YOU!", for: .highlighted)
+                self.Button.setBackgroundImage(buttonImageHighlight, for: .highlighted)
                 
                 // ボタンにタグをつける.
                 self.Button.tag = 100+self.count

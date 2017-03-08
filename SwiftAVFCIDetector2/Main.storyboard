@@ -102,6 +102,67 @@
             </objects>
             <point key="canvasLocation" x="-488.80000000000001" y="409.7451274362819"/>
         </scene>
+        <!--message-->
+        <scene sceneID="g8s-Rn-z0E">
+            <objects>
+                <tableViewController id="ord-II-gOJ" customClass="MessageListViewController" customModule="dNanpa" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Y84-gy-mjh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="BID-at-4jl">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BID-at-4jl" id="uh6-aR-S63">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ord-II-gOJ" id="eLQ-Ge-Jo0"/>
+                            <outlet property="delegate" destination="ord-II-gOJ" id="C6B-7E-qkx"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="message" image="TabMessage2.png" selectedImage="TabMessage2.png" id="OuA-6I-s8k"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="brc-mp-kSu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1236" y="-875"/>
+        </scene>
+        <!--いいね-->
+        <scene sceneID="gHw-ub-u5R">
+            <objects>
+                <tableViewController storyboardIdentifier="goodListView" id="JMe-xz-zOQ" customClass="GoodListViewController" customModule="dNanpa" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="goodList" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" id="eY2-7h-thP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="goodCell" rowHeight="40" id="DIo-RM-Ksq">
+                                <rect key="frame" x="0.0" y="28" width="375" height="40"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DIo-RM-Ksq" id="rbw-gM-6hh">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JMe-xz-zOQ" id="wfD-tc-blX"/>
+                            <outlet property="delegate" destination="JMe-xz-zOQ" id="t47-hR-fZN"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="いいね" image="likeIcon.png" id="xra-Qa-bFk"/>
+                    <connections>
+                        <outlet property="goodTable" destination="eY2-7h-thP" id="CZs-sQ-dMb"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n4w-aA-gcE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1236" y="-162"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -121,14 +182,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" selectedImage="TabMessage.png" systemItem="contacts" id="wcF-cz-LxL"/>
+                    <tabBarItem key="tabBarItem" selectedImage="TabMessage.png" systemItem="search" id="wcF-cz-LxL"/>
                     <connections>
                         <outlet property="myImageView" destination="Ota-Vf-LwO" id="fxU-YP-6if"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1236" y="-125.4872563718141"/>
+            <point key="canvasLocation" x="1236" y="485"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="m84-7o-Y8C">
@@ -177,11 +238,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="MS7-Pe-Ej9"/>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="MS7-Pe-Ej9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VnL-kb-2s0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1236" y="532"/>
+            <point key="canvasLocation" x="2041" y="-171"/>
         </scene>
         <!--Enroll View Controller-->
         <scene sceneID="XNG-m7-7vZ">
@@ -383,7 +444,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="kh1-np-RLR">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Uea-ry-lYb" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBar" automaticallyAdjustsScrollViewInsets="NO" id="Uea-ry-lYb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="IYp-UK-uxT">
                         <autoresizingMask key="autoresizingMask"/>
@@ -391,7 +452,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="tmc-P3-t6I"/>
-                        <segue destination="HOr-c9-Icf" kind="relationship" relationship="viewControllers" id="N18-Vv-Mol"/>
+                        <segue destination="JMe-xz-zOQ" kind="relationship" relationship="viewControllers" id="ngh-mz-5Nj"/>
+                        <segue destination="ord-II-gOJ" kind="relationship" relationship="viewControllers" id="549-bY-rtS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9rf-Et-9j7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -401,5 +463,7 @@
     </scenes>
     <resources>
         <image name="TabMessage.png" width="106" height="98"/>
+        <image name="TabMessage2.png" width="30" height="30"/>
+        <image name="likeIcon.png" width="30" height="30"/>
     </resources>
 </document>
